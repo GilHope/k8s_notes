@@ -52,24 +52,7 @@ Example:
 
 If you know it will take a certain period of time for your application to warm up, you can specify the 'initialDelaySeconds' option.
 
-Example:
-```readinessProbe:
-    httpGet:
-        path: /api/ready
-        port: 8080
-    initialDelaySeconds: 10
-```
-
 If you would like to specify how often to probe, you can do that using the 'periodSeconds' option.
-
-Example:
-```readinessProbe:
-    httpGet:
-        path: /api/ready
-        port: 8080
-    initialDelaySeconds: 10
-    periodSeconds: 5
-```
 
 If you would like to specify how many attempts to make, you can use the 'failureThreshold' option.
 
