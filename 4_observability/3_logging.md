@@ -6,6 +6,13 @@ Generally, any pods deployed on K8s write logs in plain text to 'stdout' and 'st
 
 The 'kubelet' runs on all of your nodes to ensure the containers on the node are healthy and running. However, if the container does not stream its logs to STDOUT and STDERR then you will not get the logs using the 'kubelet logs' command because it will then not have access to them.
 
+## K8s Pod Log Location
+
+You can find the K8s pod logs in the following directories of every worker node.
+
+__/var/log/containers:__ All the container logs are present in a single location.
+__/var/log/pods/:__ Under this location, the container logs are organized in separate pod folders. __/var/log/pods/<namespace>_<pod_name>_<pod_id>/<container_name>/__. Each pod folder contains the individual container folder and its respective log file. Each folder has a naming scheme that follows.
+
 ## K8s Container Log Format
 
 When exploring a container log file, you will find the following for each log:
