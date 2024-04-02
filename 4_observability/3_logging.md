@@ -31,7 +31,23 @@ When exploring a container log file, you will find the following for each log:
 
 ![](https://devopscube.com/wp-content/uploads/2021/11/logging-with-node-agent.png)
 
+This method uses a node-level logging agent (ex- Fluentd) to read a log file created using a container with STDOUT and STDERR streams. It then sends it to a loggin backend (ex- Elasticsearch). 
 
+In managed K8s services like EKS or GKE, the backend would be AWS Cloudwatch or Google Stackdriver.
+
+### 2. Streaming Sidecar Container
+
+![](https://devopscube.com/wp-content/uploads/2021/11/logging-with-streaming-sidecar.png)
+
+This method is useful when your application cannot write logs to STDOUT or STDERR streams directly.
+
+Instead, the application container writes all of its logs to a file within the container. Then the "sidecar container" reads from that log file and streams it to STDOUT and STDERR.
+
+### 3. Sidecar Logging Agent
+
+![](https://devopscube.com/wp-content/uploads/2021/11/logging-with-sidecar-agent.png)
+
+In this method, the logs are not streamed to STDOUT or STDERR. Instead, a sidecar container with a logging agent would run along with the application container. Then the logging agent woul stream the logs to the logging backend.
 
 ## K8s Logging Tools
 
