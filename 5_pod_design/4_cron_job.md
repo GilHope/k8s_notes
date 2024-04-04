@@ -29,3 +29,17 @@ Example:
 '0 * * * *': would run the job every hour on the hour.
 
 '30 4 * * *': would run the job at 4:30 AM every day.
+
+## Useful Fields
+
+- __'schedule':__ A __required field__ that specifies when the job should start in Cron format, such as "* * * * *" (representing minute, hour, day of the month, month, day of the week).
+
+- __'startingDeadlineSeconds':__ An optional field that sets a deadline for starting the job if it misses its scheduled time for any reason. If the job misses its scheduled time by more than this period, it is not started.
+
+- __'concurrencyPolicy':__ Defines how to treat concurrent executions of a job. Options include 'Allow' (default), 'Forbid' (prevents concurrent runs), and 'Replace' (cancelling current jobs and replacing with new).
+
+- __'suspend':__ An optional boolean field that allows you to control whether subsequent executions are suspended. This dones not apply o already started executions.
+
+- __'successfulJobsHistoryLimit' and 'failedJobsHistoryLimit':__ Specifies the number of successful and failed finished jobs to retain, respectively. This helps in keeping a history of completed and failed jobs for review while controlling the amount of stored job data.
+
+- __'jobTemplate':__ This is where you define the job specification just like you would for a standalone job. It includes the template for creating pods, along with any relevant settings like 'backoffLimit', 'completions', and 'parallelism'.
