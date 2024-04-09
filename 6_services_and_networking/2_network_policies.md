@@ -79,3 +79,8 @@ spec:
 - `policyTypes` is set to egress so it is only controlling outbound traffic from the selected pods.
 
 - The first rule under `egress` specifies `to` block an `ipBlock` selector. By specifying the `cidr` of `0.0.0.0/0` with the `except` of `192.168.100.0/24` what it is doing is allowing traffic to ALL destinations EXCEPT for that specific range.
+
+## Useful Commands
+
+To view the network policies within a namespace use:
+`kubectl get networkpolicy` or `kubectl get netpol`
