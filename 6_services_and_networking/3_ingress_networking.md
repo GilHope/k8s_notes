@@ -45,8 +45,15 @@ spec:
 
 ## Useful Commands
 
-Now, in k8s version 1.20+ we can create an Ingress resource from the imperative way like this:-
+Now, in k8s version 1.20+ we can create an Ingress resource from the imperative way like this:
+
+__Creating Ingress Resources:__
 
 Format - `kubectl create ingress <ingress-name> --rule="host/path=service:port"`
 
 Example - `kubectl create ingress ingress-test --rule="wear.my-online-store.com/wear*=wear-service:80"`
+
+__List Ingress:__
+
+`kubectl get ingress`
+
