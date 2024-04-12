@@ -58,10 +58,10 @@ Because the container layer is ephemeral and coupled to the lifecycle of the con
 - __Volumes:__ are managed by Docker and are stored outside of the container's filesystem and are not removed when a container is deleted. Best when data needs be stored independent of the container lifecycle, managed securely, and portable across different environments.
 - __Bind Mounts:__ involve mapping a host file or directory to a container, allowing the container to access and modify the host's filesystem directly. Best when needing immediate performance within the container and a native filesystem.
 
+__Storage Drivers:__
+
 So, what is responsible for doing all of these operations? 
 Maintaining the layered architecture, creating a writable layer, moving files across layers to enable copy and write, and etc?
-
-__Storage Drivers:__
 
 Storage Drivers are an integral component to containerization process. They allow Docker to manage the details of the file system, handle how images are built, how layers are merged, and how changes are written. Each type of storage driver will handle these performantly and efficiently slightly different, so you need to consider this depending on your workload and specifics of your system.
 
