@@ -84,3 +84,4 @@ spec:
 
 To view the network policies within a namespace use:
 `kubectl get networkpolicy` or `kubectl get netpol`
+
