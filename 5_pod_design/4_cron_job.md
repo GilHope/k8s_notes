@@ -4,6 +4,8 @@
 
 CronJobs in Kubernetes are objects that execute a specified job at recurring intervals. 
 
+When you think of " ChronJobs ", think of "Chron" as in time, ie Chronos. Job is self explanatory. A Chronjob will perform a job on a time schedule.
+
 CronJobs are the automated equivalent of running a scheduled task on a traditional server, but are managed within the K8s environment.
 
 You might use CronJobs for scheduling things, such as backups or generating reports, that need to run periodically or a specific times.
