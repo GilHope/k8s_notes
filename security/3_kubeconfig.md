@@ -96,10 +96,22 @@ To list the clusters, contexts, and users, and as well the current-contet set, u
 `kubectl config view`
 
 Alternatively, if you want to list a specific kubeconfig file then you can pass the kubeconfig option, like so:
-`kubectl config view --kubeconfig=my-custom-config`
+`kubectl config view --kubeconfig=/path/to/my-custom-config`
 
-To change the context to use a different user to access a cluster, use:
+To change the default context to use a different user to access a cluster, use:
 `kubectl config use-context <different-user>@<cluster-name>`
+
+To do the same for a custom context, try:
+`kubectl config use-context --kubeconfig=/path/to/my-custom-config`
+
+To view you default current context, use:
+`kubectl config current-context`
+
+For a specific non-default current context, use:
+`kubectl config current-context --kubeconfig=/path/to/my-custom-config`
+
+To set a specific kubeconfig file to become the new default, use:
+`cp my-custom-config ~/.kube/config`
 
 There are many other commands you can execute, view the list with:
 `kubectl config -h`
